@@ -1,5 +1,5 @@
 import { Rect } from "./../geometries/rectangle.ts";
-import { Ellipse } from "./../geometries/ellipse.ts";
+import { Ellipse, ellipsePool } from "./../geometries/ellipse.ts";
 import { Polygon, polygonPool } from "../geometries/polygon.ts";
 import { Bounds, boundsPool } from "./bounds.ts";
 import pool from "../system/legacy_pool.js";
@@ -682,6 +682,8 @@ export default class Body {
 				linePool.release(shape);
 			} else if (shape instanceof Polygon) {
 				polygonPool.release(shape);
+			} else if (shape instanceof Ellipse) {
+				ellipsePool.release(shape);
 			} else {
 				pool.push(shape);
 			}

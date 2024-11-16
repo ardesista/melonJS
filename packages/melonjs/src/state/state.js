@@ -501,9 +501,9 @@ const state = {
 		// do nothing if already the current state
 		if (!this.isCurrent(state)) {
 			_extraArgs = null;
-			if (arguments.length > 1) {
+			if (arguments.length > 2) {
 				// store extra arguments if any
-				_extraArgs = Array.prototype.slice.call(arguments, 1);
+				_extraArgs = Array.prototype.slice.call(arguments, 2);
 			}
 			// if fading effect
 			if (_fade.duration && _stages[state].transition) {
